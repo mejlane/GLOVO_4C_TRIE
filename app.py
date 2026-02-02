@@ -9,11 +9,11 @@ def detecter_type(nom):
     if any(m in nom for m in ["PLATEAU", "PLT"]): return "PLATEAUX"
     if "BOITE" in nom: return "BOITE_BELDI"
     if any(m in nom for m in ["ENTREMET", "ENT"]): return "ENTREMETS"
-    if any(m in nom for m in ["CAKE", "MADELEINE", "BROWNIE", "COOKIE"]): return "CAKE"
-    if any(m in nom for m in ["CROISSANT", "CHOCOLAT", "SUISSE", "KRACHEL", "BRIOCHE"]): return "VIENNOISERIE"
+    if any(m in nom for m in ["CAKE", "MADELEINE", "BROWNIE"]): return "CAKE"
+    if any(m in nom for m in ["CROISSANT","CROIS", "PAIN AU CHOCOLAT", "SUISSE", "KRACHEL", "COOKIE"]): return "VIENNOISERIE"
     if any(m in nom for m in ["PAIN", "BAGUETTE", "SEMOULE"]): return "BOULANGERIE"
     if any(m in nom for m in ["TARTE", "ECLAIR", "MILLE", "PATISSERIE"]): return "PATISSERIE"
-    if any(m in nom for m in ["PIZZA", "QUICHE", "SALÉ", "MSAMEN", "BRIOUATE"]): return "SALÉS"
+    if any(m in nom for m in ["PIZZA", "QUICHE", "SALÉ", "MSAMEN", "BRIOUATE", "PASTILLA","HARCHA"]): return "SALÉS"
     return "AUTRES"
 
 st.title("🚀 Scanner GLOVO Haute Précision")
@@ -92,4 +92,5 @@ if file:
             st.write("Vérifiez que vos noms sont en Colonne A et vos chiffres en Colonne B.")
 
     except Exception as e:
+
         st.error(f"Erreur lors de la lecture : {e}")
