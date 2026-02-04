@@ -6,15 +6,15 @@ st.set_page_config(page_title="Scanner GLOVO Pro", layout="wide")
 
 def detecter_type(nom):
     nom = str(nom).upper().strip()
-    if any(m in nom for m in ["PLATEAU", "PLT"]): return "PLATEAUX"
+    if any(m in nom for m in ["PLATEAU", "PLT", "BOITE MACARON"]): return "PLATEAUX"
     if "BOITE" in nom: return "BOITE_BELDI"
     if any(m in nom for m in ["ENTREMET", "ENT"]): return "ENTREMETS"
     if any(m in nom for m in ["CAKE", "MADELEINE", "BROWNIE", "FONDANT"]): return "CAKE"
-    if any(m in nom for m in ["CROISSANT","CROIS", "SCHNICK", "PAIN AU CHOCOLAT", "SUISSE", "KRACHEL", "COOKIE", "BEIGNET"]): return "VIENNOISERIE"
+    if any(m in nom for m in ["CROISSANT","CROIS", "SCHNICK", "PAIN AU CHOCOLAT", "SUISSE", "KRACHEL", "COOKIE", "BEIGNET", "NEW YORK ROLL", "GALETTE"]): return "VIENNOISERIE"
     if any(m in nom for m in ["PAIN", "BAGUETTE", "SEMOULE"]): return "BOULANGERIE"
     if any(m in nom for m in ["TARTE", "ECLAIR", "MILLE", "PATISSERIE"]): return "PATISSERIE"
-    if any(m in nom for m in ["PIZZA", "QUICHE", "SALÉ", "MSAMEN", "BRIOUATE", "PASTILLA","HARCHA"]): return "SALÉS"
-    if any(m in nom for m in ["CALADE", "COFFRET"]): return "A OFRRIRE"
+    if any(m in nom for m in ["PIZZA", "QUICHE", "SALÉ", "MSAMEN", "BRIOUATE", "PASTILLA","HARCHA", "SANDWISH", "NAVETTE"]): return "SALÉS"
+    if any(m in nom for m in ["CALADE", "COFFRET", "BOITE CHOCOLAT"]): return "A OFRRIRE"
     return "AUTRES"
 
 st.title("🚀 Scanner GLOVO Haute Précision")
@@ -95,4 +95,5 @@ if file:
     except Exception as e:
 
         st.error(f"Erreur lors de la lecture : {e}")
+
 
